@@ -1,0 +1,43 @@
+spring:
+  application:
+    name: nep-backend
+  datasource:
+    url: jdbc:mysql://localhost:3306/nep_db?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+    username: root
+    password: 123456  # 修改为你的MySQL密码
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      minimum-idle: 5
+      maximum-pool-size: 20
+      connection-timeout: 30000
+      idle-timeout: 600000
+      max-lifetime: 1800000
+deepseek:
+  api-key: sk-6d5d66697095414cb1afc913327e9ae8
+  base-url: https://api.deepseek.com
+  model: deepseek-flash
+
+mybatis-plus:
+  mapper-locations: classpath*:mapper/**/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: auto
+
+# JWT配置
+jwt:
+  secret: neusoft2026secretkey
+  expire: 86400000
+
+logging:
+  level:
+    com.neusoft.nep: debug
+  pattern:
+    console: '%d{yyyy-MM-dd HH:mm:ss} | %-5level | %thread | %class.%method | %msg%n'
+
+server:
+  port: 8080
+  servlet:
+    context-path: /
