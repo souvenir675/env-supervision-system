@@ -2,9 +2,9 @@ spring:
   application:
     name: nep-backend
   datasource:
-    url: jdbc:mysql://localhost:3306/nep_db?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+    url: jdbc:mysql://localhost:3306/your_database_name?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
     username: root
-    password: 123456  # 修改为你的MySQL密码
+    password: your_password  # 修改为你的MySQL密码
     driver-class-name: com.mysql.cj.jdbc.Driver
     hikari:
       minimum-idle: 5
@@ -13,7 +13,7 @@ spring:
       idle-timeout: 600000
       max-lifetime: 1800000
 deepseek:
-  api-key: sk-6d5d66697095414cb1afc913327e9ae8
+  api-key: your_deepseek_api_key
   base-url: https://api.deepseek.com
   model: deepseek-flash
 
